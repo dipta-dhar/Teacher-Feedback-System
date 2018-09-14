@@ -1,6 +1,6 @@
-# Case-1:
-## Input:
-###  PT: 0123456789ABCDEF
+Case-1:
+  Input:
+     PT: 0123456789ABCDEF
 ### Key: 133457799BBCDFF1
 ## OutPut:
 ### Cipher Text:
