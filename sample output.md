@@ -4,40 +4,40 @@
 ## Case-1:
   Input:
   ------
-     PT: 0123456789ABCDEF
-    Key: 133457799BBCDFF1
+     PT: ABCDEFGH
+    Key: 1234ABCD
     
   OutPut:
   -------
     Cipher Text:
-       Binary Form: 1000 0101 1110 1000 0001 0011 0101 0100 0000 1111 0000 1010 1011 0100 0000 0101
-       Hexadecimal: 85E813540F0AB405
+        Binary Form: 0011 0011 1010 0100 1111 0111 1101 1100 1110 1111 1100 1010 1100 1100 1010 1111
+        Hexadecimal: 33A4F7DCEFCACCAF
 
 
 
 ## Case-2:
   Input:
   ------
-     PT: 0123456789ABCDEF
-    Key: 133457799BBCDFF2
+     PT: ABCDEFGH
+    Key: 1234ABCA
     
   OutPut:
   -------
     Cipher Text:
-       Binary Form: 1101 1100 0010 1010 0101 1111 0010 1010 1011 0000 1001 1010 1011 0111 0110 1000
-       Hexadecimal: DC2A5F2AB09AB768
+       Binary Form: 0001 0101 1111 0111 0110 1000 0001 0010 0010 0010 0110 0100 1111 0010 0111 0100
+       Hexadecimal: 15F768122264F274
 
 
 
 ## Case-3:
   Input:
   ------
-     PT: 0123456789ABCDEF
-    Key: 133457799BBCDFF5
+     PT: ABCDEFGH
+    Key: 1234ABCB
   
   OutPut:
   -------
     Cipher Text:
-       Binary Form: 1110 1001 1101 0010 0001 1101 1010 0010 1011 0100 1010 1110 0001 1011 0101 1111
-       Hexadecimal: E9D21DA2B4AE1B5F
+       Binary Form: 1101 0010 1000 0010 1101 0110 1010 1010 0110 0110 0110 0010 0000 1011 0010 0001
+       Hexadecimal: D282D6AA66620B21
 
