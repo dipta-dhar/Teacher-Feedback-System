@@ -1,4 +1,4 @@
-# DES - [Data Encryption Standard] Algorithm
+# DES - (Data Encryption Standard) Algorithm
 
 Example:
 -------
