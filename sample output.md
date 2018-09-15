@@ -4,8 +4,8 @@
 ## Case-1:
 ### Input:
 ----------
-     PT: ABCDEFGH
-    Key: 1234ABCD
+    Enter Plain Text: ABCDEFGH
+    Enter  Key value: 1234ABCD
     
 ### OutPut:
 -----------
@@ -18,8 +18,8 @@
 ## Case-2:
 ### Input:
 ----------
-     PT: ABCDEFGH
-    Key: 1234ABCA
+    Enter Plain Text: ABCDEFGH
+    Enter  Key value: 1234ABCA
     
 ### OutPut:
 -----------
@@ -32,8 +32,8 @@
 ## Case-3:
 ### Input:
 ----------
-     PT: ABCDEFGH
-    Key: 1234ABCB
+    Enter Plain Text: ABCDEFGH
+    Enter  Key value: 1234ABCB
   
 ### OutPut:
 -----------
