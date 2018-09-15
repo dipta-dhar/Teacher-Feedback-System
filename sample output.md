@@ -1,4 +1,7 @@
-Case-1:
+# sample output:
+----------------
+
+## Case-1:
   Input:
   ------
      PT: 0123456789ABCDEF
@@ -12,7 +15,7 @@ Case-1:
 
 
 
-Case-2:
+## Case-2:
   Input:
   ------
      PT: 0123456789ABCDEF
@@ -26,7 +29,7 @@ Case-2:
 
 
 
-Case-3:
+## Case-3:
   Input:
   ------
      PT: 0123456789ABCDEF
