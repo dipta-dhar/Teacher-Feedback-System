@@ -24,19 +24,19 @@ void sTable(int [], int []);
 void Display();
 
 void Copy(int [], int [], int );
-void HexToBi(char [], int []);
-void DecToBi(int , int []);
-void BinToHex(int [], char []);
+void DecToBi(int , int [] );
+void BinToHex(int [], char [] );
+void TexToBin(char [], int [] );
 
 /*
 input:
-     PT: 0123456789ABCDEF
-    Key: 133457799BBCDFF1
+     PT: ABCDEFGH
+    Key: 1234ABCD
 
 output:
      Cipher Text:
-        Binary Form: 1000 0101 1110 1000 0001 0011 0101 0100 0000 1111 0000 1010 1011 0100 0000 0101
-        Hexadecimal: 85E813540F0AB405
+        Binary Form: 0011 0011 1010 0100 1111 0111 1101 1100 1110 1111 1100 1010 1100 1100 1010 1111
+        Hexadecimal: 33A4F7DCEFCACCAF
 */
 
 int main()
@@ -160,8 +160,8 @@ void DESfunction(int R0[], int output[], int roundNum) {
 }
 
 void PTpreposses(char pt[], int output[]) {
-    /// input: string(hexadecimal 8-bit) output: binary(binary 64-bit)
-    HexToBi(pt, output);
+    /// input: Text, output: 64-bit Binary (Text --> ASCII-decimal-value --> Binary)
+    TexToBin(pt, output);
 
     /// Initial permutation (input: 64-bit, output: 64-bit)
     int IP[] = { 58,  50,  42,  34,  26,  18,  10,   2,
@@ -180,9 +180,10 @@ void PTpreposses(char pt[], int output[]) {
 }
 
 void KEYpreposses(char inputKEY[]) {
-    int output[100], Temp[100];
-    HexToBi(inputKEY, output);
+    int output[100];
+    TexToBin(inputKEY, output);
 
+    int Temp[100];
     int kTemp[100], kLeft[50], kRight[50];
     /// Table-1 (input: 64-bit, output: 56-bit)
     int pc1[] = {57,  49,  41,  33,  25,  17,   9,   1,
@@ -408,27 +409,31 @@ void BinToHex(int in[], char out[]) {
     out[17] = '\0';
 }
 
-void HexToBi(char Text[], int toCopy[]) {
-    int in = 0;
-    for(int i=0; Text[i]; i++) {
-        if (Text[i] == '0')        { toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=0; }
-        else if (Text[i] == '1')   { toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=1; }
-        else if (Text[i] == '2')   { toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=0; }
-        else if (Text[i] == '3')   { toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=1; }
+void TexToBin(char input[], int output[]) {
+    /// Text into ASCII value
+    int Temp[10];
+    for (int i=0; i<8; i++) {
+        Temp[i] = input[i];
+    }
 
-        else if (Text[i] == '4')   { toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=0; }
-        else if (Text[i] == '5')   { toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=1; }
-        else if (Text[i] == '6')   { toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=0; }
-        else if (Text[i] == '7')   { toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=1; }
+    /// ASCII value --> Binary
+    int indx = 0;
+    for (int i=0; i<8; i++) {
+        int num = Temp[i];
 
-        else if (Text[i] == '8')   { toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=0; }
-        else if (Text[i] == '9')   { toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=0; toCopy[in++]=1; }
-        else if (Text[i] == 'A')   { toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=0; }
-        else if (Text[i] == 'B')   { toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=1; toCopy[in++]=1; }
-        else if (Text[i] == 'C')   { toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=0; }
-        else if (Text[i] == 'D')   { toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=0; toCopy[in++]=1; }
-        else if (Text[i] == 'E')   { toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=0; }
-        else if (Text[i] == 'F')   { toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=1; toCopy[in++]=1; }
+        int out[8], in = 0;
+        while (num != 0) {
+            out[in++] = num % 2;
+            num /= 2;
+        }
+
+        int Bin[8];
+        for (int j=0; j<8; j++) Bin[j]=0;
+        for (int j=0; j<in; j++) {
+            Bin[7-j] = out[j];
+        }
+
+        for (int j=0; j<8; j++) output[indx++] = Bin[j];
     }
 }
 
