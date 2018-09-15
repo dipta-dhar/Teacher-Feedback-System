@@ -5,7 +5,6 @@ Example:
 
 Plain Text Part:
 ---------------
-Here,
 
 M = The plain text
 
