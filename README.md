@@ -2,9 +2,14 @@
 
 Example:
 -------
-Let,
 
-M be the plain text message,
+Plain Text Part:
+---------------
+Here,
+
+M = The plain text
+
+Now,
 
 M = NEVRQUIT
 
@@ -19,3 +24,20 @@ Here Two haves,
 L = 01001110 01000101 01010110 01010010
 
 R = 01010001 01010101 01001001 01010100
+
+
+Key Part:
+---------
+
+K = Key value
+
+Now,
+
+K = 1234ABCD
+
+Key in ASCII: 48 49 50 51 65 66 67 68
+
+Key in Hexad: 31 32 33 34 41 42 43 44
+
+K = 00110001 00110010 00110011 00110100 01000001 01000010 01000011 01000100
+
