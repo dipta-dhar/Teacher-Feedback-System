@@ -13,18 +13,18 @@ using namespace std;
 char inPT[100], inKey[100], sCT[100];
 int PT[100], key[50][100],  bCT[100];
 
+void Display();
 void DESinput();
 void DESencryption();
 
-void PTpreposses(char [], int []);
-void KEYpreposses(char []);
-void Round(int [], int [], int );
 void DESfunction(int [], int [], int );
+void PTpreposses(char [], int []);
+void Round(int [], int [], int );
 void sTable(int [], int []);
-void Display();
+void KEYpreposses(char []);
 
-void Copy(int [], int [], int );
 void DecToBi(int , int [] );
+void Copy(int [], int [], int );
 void BinToHex(int [], char [] );
 void TexToBin(char [], int [] );
 
