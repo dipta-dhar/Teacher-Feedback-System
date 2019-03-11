@@ -1,0 +1,109 @@
+body{
+background-color:white;
+}
+
+#slider_1{
+margin-top:7%;
+margin-bottom:7%;
+width:800px;
+left: 20%;
+}
+
+#logo_image{
+max-height:64px;
+}
+
+/*------------colors---------------------------------------------------------------*/
+.nav-wrapper{
+background-color:black;
+}
+
+/* label color */
+.input-field label {
+     color: white;
+   }
+   /* label focus color */
+.input-field input[type=text]:focus + label,.input-field input[type=password]:focus + label {
+     color:#ffff80;
+   }
+   /* label underline focus color */
+.input-field input[type=text]:focus ,.input-field input[type=password]:focus {
+     border-bottom: 1px solid #ffff80;
+     box-shadow: 0 1px 0 0 #ffff80;
+   }
+.login_box_style{
+background-color:black;
+color:white;
+}
+/*-----------------------------------------------------------------------------------*/
+.breaker_style{
+margin-top:7%;
+margin-bottom:7%;
+color:grey;
+}
+.mybtn,.mybtn:hover{
+background-color:#ffffb3;
+color:black;
+}
+.spaced_style{
+padding-top:5%;
+}
+#student_index_body_style{
+
+}
+#personal_details_style{
+margin-top:7%;
+margin-bottom:7%;
+background-color:#eeeeee;
+}
+.details_style_blue{
+color:blue;
+}
+.details_style_green{
+color:green;
+}
+.container_fluid_style{
+margin-left:1%;
+margin-right:1%;
+margin-top:1%;
+}
+.enclosed_question_options_style{
+min-height:80px;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    //margin: 10px;
+	margin-top:10px;
+}
+.fileUpload input.upload {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+		cursor: pointer;
+		opacity: 0;
+		filter: alpha(opacity=0);
+}
+.know_my_depth_style {
+margin-top:2%;
+margin-bottom:1%;
+font-size:20px;
+//text-align:center;
+}
+
+.know_my_depth_style a:hover{
+color:black;
+}
+.material-icons{
+vertical-align:middle;
+}
+.a_style{
+border-radius:20%;
+background-color:yellow;
+}
+.a_style_diff{
+background-color:yellow;
+}
