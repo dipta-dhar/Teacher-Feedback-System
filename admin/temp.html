@@ -1,0 +1,33 @@
+
+<html>
+<head> </head>
+<body>
+  <script type="text/javascript">
+function checkForm(formname)
+{
+if(formname.radiobuttonname.value == '') {
+alert("Error: Please select a radio button!");
+return false;
+}
+document.getElementById('submit').value='Please wait..';void(0);
+return true;
+}
+</script>
+
+<script LANGUAGE="JavaScript">
+<!--
+function ValidateForm(form){
+ErrorText= "";
+if ( ( form.gender[0].checked == false ) && ( form.gender[1].checked == false ) ) { alert ( "Please choose your Gender: Male or Female" ); return false; }
+if (ErrorText= "") { form.submit() }
+}
+-->
+</script>
+<br><form name="feedback" action="mailto:webgimmicks@email.com" method="post">
+Your Gender: <input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<input type="button" name="SubmitButton" value="Submit" onClick="ValidateForm(this.form)">
+<input type="reset" value="Reset">
+</form> 
+</body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+<head>
+          <link href="icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<title> Running Javascript </title>
+</head>
+<body>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+<script type = "text/javascript">
+function validateit(){
+    
+    var x2 = document.forms["form1"]["zip"].value;
+    var x3 = document.forms["form1"]["username"].value;
+    var x4 = document.forms["form1"]["password"].value;
+    var x5 = document.forms["form1"]["email"].value;
+    var x5 = document.forms["form1"]["ip"].value;
+var x1 = document.forms["form1"]["url"].value;
+    if (/^[http|ftp]/.test(x1)) {
+            document.write("String starts with http or ftp.");
+        } else {
+            document.write("String does not start with http or ftp.");
+        } 
+    
+
+    if (/^\d{6}$/.test(x2)) {
+    if(x2 == '000000'){
+        document.write("It's 6 digits but invalid.");
+    } else
+        document.write("It's 6 digits and valid.");
+} else {
+    document.write("It's not 6 digits.");
+} 
+
+if (/^[[a-z]|[A-Z]]/.test(x3)) {
+    document.write("Valid username.");
+} else {
+    document.write("Invalid username. Should begin with an alphabet character only.");
+}  
+
+if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/.test(x4)) {
+    document.write("Valid password.");
+} else {
+    document.write("Invalid Password. Should contain a atleast one number, special character, uppercase and lowercase alphabet and should be 8 to 15 character long.");
+} 
+
+if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(x6)) {
+    document.write("Valid IP address.");
+} else {
+    document.write("Invalid IP address.");
+} 
+
+if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$/.test(x5)) {
+    document.write("Valid email address.");
+} else {
+    document.write("Invalid email address.");
+} 
+
+window.stop();
+}
+
+</script>
+<div class="row">
+
+<form class="col s12 m6 l6 offset-m3 offset-l3" name="form1">
+    <div class="row">
+        <div class="input-field">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <input  id="url" name="url" type="text" class="validate" >
+        <label for="url">URL</label><br>
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <input id="zip" name="zip" type="text" class="validate">
+        <label for="zip">ZIP Code</label><br>
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <input  id="username" name="username" type="text" class="validate">
+        <label for="username">UserName</label><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <input  id="password"  name="password" type="text" class="validate">
+        <label for="password">Password</label><br>
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <input  id="email" name="email" type="text" class="validate">
+        <label for="email">E-mail ID</label><br>
+        </div>
+    </div>
+    <div class="input-field">
+        
+        <input  id="ip" name="ip" type="text" class="validate">
+        <label for="ip">IP v4</label><br>
+
+        <button class='btn waves-effect waves-light ' id='btn_sub' name='btn_sub' onclick="validateit()">Submit </button>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            <input  id="emai" name="emai" type="text" class="validate" onkeydown="validateit()">
+        <label for="emai">E-mail ID</label><br>
+        </div>
+    </div>
+</form>
+
+<form name="form2"></form>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]*)$ /view_plots.php?plot_cat=$1&dept_id=$1&plot_faculty=$1&plot_faculty_course=$1 [L]
